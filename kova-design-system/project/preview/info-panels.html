@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px; display: flex; flex-direction: column; gap: 12px; background: var(--color-bg); }
+  .panel { border-radius: 12px; padding: 14px 16px; border-left: 3px solid var(--color-accent); background: #fff; }
+  .panel.danger { border-left-color: #C4584A; background: rgba(196,88,74,0.08); }
+  .panel.amber  { border-left-color: #C4884A; background: rgba(196,136,74,0.10); }
+  .panel.info   { border-left-color: #5B8EC9; background: rgba(91,142,201,0.10); }
+  .lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; color: var(--color-accent); }
+  .panel.danger .lbl { color: #C4584A; }
+  .panel.amber .lbl { color: #C4884A; }
+  .panel.info .lbl { color: #5B8EC9; }
+  .txt { font-size: 12.5px; line-height: 1.5; color: var(--color-ink); }
+</style></head>
+<body>
+  <div class="panel danger"><div class="lbl">Red flag · pharmacist required</div><div class="txt">Detected potential interaction with current Warfarin script. Connecting to on-call pharmacist.</div></div>
+  <div class="panel amber"><div class="lbl">Out of stock</div><div class="txt">Sertraline 50mg unavailable at this kiosk. Nearest in-stock: K-MELB-007, 1.2km.</div></div>
+  <div class="panel info"><div class="lbl">Preparation required</div><div class="txt">Your script is being prepared. Pickup window: 14:30 to 15:00 today.</div></div>
+  <div class="panel"><div class="lbl">Privacy-first consult</div><div class="txt">All conversations are encrypted end to end. Pharmacist sees only what's needed for your care.</div></div>
+</body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 12px; background: var(--color-bg); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .tile {
+    border-radius: 10px;
+    padding: 28px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 140px;
+    border: 1px solid var(--border-subtle);
+  }
+  .tile.snow { background: var(--color-bg); }
+  .tile.white { background: #fff; }
+  .tile.ink { background: #2B333D; border-color: transparent; }
+  .wm { font-family: var(--font-sans); font-weight: 300; font-size: 36px; letter-spacing: 11px; }
+  .wm.ink { color: #2B333D; }
+  .wm.alaskan { color: #6FAED1; }
+  .wm.snow { color: #F5F5F0; }
+  .lbl { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 600; color: var(--color-ink-muted); }
+  .tile.ink .lbl { color: rgba(255,255,255,0.55); }
+</style></head>
+<body>
+  <div class="tile snow">
+    <div class="wm ink">KOVA</div>
+    <div class="lbl">Default · Ink</div>
+  </div>
+  <div class="tile white">
+    <div class="wm alaskan">KOVA</div>
+    <div class="lbl">Brand · Alaskan Blue</div>
+  </div>
+  <div class="tile ink">
+    <div class="wm snow">KOVA</div>
+    <div class="lbl">Reversed · Snow White</div>
+  </div>
+</body></html>

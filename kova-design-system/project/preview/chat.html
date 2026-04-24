@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px; background: var(--color-bg); display: flex; flex-direction: column; gap: 12px; }
+  .row { display: flex; gap: 10px; align-items: flex-start; }
+  .row.user { flex-direction: row-reverse; }
+  .av { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #4A79B8, #6FAED1); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .row.user .av { background: var(--color-ink); }
+  .b { background: #fff; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 11px 14px; font-size: 13px; line-height: 1.5; color: var(--color-ink); max-width: 80%; }
+  .b.user { background: var(--color-accent); color: #fff; border-color: transparent; }
+  .name { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-muted); margin-bottom: 4px; font-weight: 600; }
+</style></head>
+<body>
+  <div class="row">
+    <div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div class="b"><div class="name">Qiri · Pharmacist AI</div>Hi Jon. I see you're picking up Sertraline 50mg today. Any changes to your other medications since your last visit?</div>
+  </div>
+  <div class="row user">
+    <div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    <div class="b user">No changes, just the same scripts.</div>
+  </div>
+</body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 20px; background: var(--color-bg); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+  .card { background: var(--color-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; }
+  h4 { margin: 0 0 8px; font-size: 11px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.1em; }
+  .do, .dont { font-size: 12px; line-height: 1.5; padding: 9px 10px; border-radius: 8px; margin-bottom: 6px; color: var(--color-ink); }
+  .do { background: rgba(58,139,106,0.10); }
+  .dont { background: rgba(196,88,74,0.08); }
+  .m { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 700; margin-right: 8px; letter-spacing: 0.08em; }
+  .do .m { color: #3A8B6A; }
+  .dont .m { color: #C4584A; }
+</style></head>
+<body>
+  <div class="card">
+    <h4>Clear, not clinical</h4>
+    <div class="do"><span class="m">DO</span>Tap below to begin a private consult.</div>
+    <div class="dont"><span class="m">DON'T</span>Initiate consultation interaction now.</div>
+  </div>
+  <div class="card">
+    <h4>Action-first CTAs</h4>
+    <div class="do"><span class="m">DO</span>Begin consult · Confirm pickup</div>
+    <div class="dont"><span class="m">DON'T</span>Click here · Submit · Continue</div>
+  </div>
+</body></html>

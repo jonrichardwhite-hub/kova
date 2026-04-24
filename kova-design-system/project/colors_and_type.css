@@ -1,0 +1,269 @@
+/* ===================================================================
+   KOVA — Colors & Type
+   Canonical tokens from the KOVA SHARED HEAD (Webflow) + design system v0.1.
+   Load this once per page. Use semantic vars in components, not raw hex.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---- Core surfaces ---- */
+  --color-bg:          #F5F5F0;   /* Snow White — page background */
+  --color-surface:     #FFFFFF;   /* Cards, panels, elevated surfaces */
+  --color-ink:         #2B333D;   /* Primary text, primary button fill */
+  --color-ink-muted:   #6B7280;   /* Muted text */
+  --color-divider:     #EBEBEB;
+  --color-soft:        #F7F7F7;
+
+  /* ---- Brand ---- */
+  --color-taupe:       #C8B6A6;   /* Doeskin — warm accent, brand mark circles */
+  --color-accent:      #4A79B8;   /* Regatta — canonical CTA / links / eyebrows */
+  --color-accent-hover:#3A68A0;
+  --color-accent-sky:  #4B9CDB;   /* Sky — nav-kova-cta override only */
+  --color-link:        #6FAED1;   /* Alaskan Blue — brand-secondary links, mark bottom slash */
+  --color-accent-gold: #FFD88F;   /* Warm highlight */
+  --color-divider-warm:    #D1CBC2;
+  --color-divider-warm-alt:#D0C8B5;
+
+  /* ---- Domain (clinical) — use sparingly ---- */
+  --color-aero: #C4584A; --color-aero-bg: rgba(196,88,74,0.08);
+  --color-rad:  #3A8B6A; --color-rad-bg:  rgba(58,139,106,0.08);
+  --color-fin:  #5B8EC9; --color-fin-bg:  rgba(91,142,201,0.08);
+  --color-law:  #7B6AA0; --color-law-bg:  rgba(123,106,160,0.08);
+  --color-hum:  #C4884A; --color-hum-bg:  rgba(196,136,74,0.08);
+
+  /* ---- Semantic ---- */
+  --color-danger:  #C4584A; --color-danger-bg:  rgba(196,88,74,0.08);
+  --color-success: #3A8B6A; --color-success-bg: rgba(58,139,106,0.10);
+  --color-amber:   #C4884A; --color-amber-bg:   rgba(196,136,74,0.10);
+  --color-info:    #5B8EC9; --color-info-bg:    rgba(91,142,201,0.10);
+
+  /* ---- Borders & hover ---- */
+  --border-subtle:  rgba(43,47,54,0.06);
+  --border-default: rgba(43,47,54,0.10);
+  --border-strong:  rgba(43,47,54,0.15);
+  --surface-hover:  rgba(43,47,54,0.04);
+
+  /* ---- CTA tints ---- */
+  --cta-soft:       rgba(74,121,184,0.08);
+  --cta-mid:        rgba(74,121,184,0.18);
+  --cta-bg-subtle:  rgba(74,121,184,0.06);
+
+  /* ---- Semantic text aliases ---- */
+  --fg1: var(--color-ink);              /* Primary text */
+  --fg2: rgba(43,51,61,0.7);            /* Secondary / soft */
+  --fg3: var(--color-ink-muted);        /* Muted / meta */
+  --fg-on-dark: var(--color-bg);
+  --bg1: var(--color-bg);               /* Page */
+  --bg2: var(--color-surface);          /* Card */
+  --bg3: var(--color-soft);             /* Inset / hover */
+
+  /* ---- Typography stacks ---- */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* Aliases */
+  --body:    var(--font-sans);
+  --display: var(--font-display);
+  --mono:    var(--font-mono);
+
+  /* ---- Type scale (semantic) ---- */
+  /* Display / hero — Playfair 200 */
+  --fs-hero:     clamp(2.5rem, 5vw, 3.5rem);  /* ~56px */
+  --fs-display:  clamp(2rem, 3.6vw, 2.75rem); /* ~44px section */
+  --fs-h1:       2.25rem;   /* 36px — wordmark / greeting */
+  --fs-h2:       1.5rem;    /* 24px — feature title */
+  --fs-h3:       1.375rem;  /* 22px — step title */
+  --fs-h4:       0.9375rem; /* 15px — section title (sans semibold) */
+  --fs-body:     0.8125rem; /* 13px */
+  --fs-body-lg:  1rem;      /* 16px — marketing body */
+  --fs-small:    0.75rem;   /* 12px */
+  --fs-xs:       0.6875rem; /* 11px */
+  --fs-cta:      0.875rem;  /* 14px — button */
+  --fs-eyebrow:  0.72rem;   /* ~11.5px — kova-tag */
+  --fs-mono-tag: 0.5625rem; /* 9px */
+  --fs-mono-id:  0.625rem;  /* 10px */
+
+  /* Letter spacing */
+  --ls-display:   -0.025em;
+  --ls-display-2: -0.02em;
+  --ls-eyebrow:    0.18em;
+  --ls-mono-tag:   0.075em;
+  --ls-wordmark:   0.32em;   /* ~16-18px on large wordmark */
+  --ls-cta:        0.02em;
+
+  /* Line height */
+  --lh-display:   1.05;
+  --lh-heading:   1.15;
+  --lh-body:      1.55;
+  --lh-tight:     1.1;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- Radii ---- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius:    12px;   /* default card */
+  --radius-md: 12px;
+  --radius-lg: 16px;   /* hero surface */
+  --radius-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
+  --shadow-xl: 0 16px 60px rgba(0,0,0,0.12);
+  --shadow-cta:0 2px 12px rgba(74,121,184,0.25);
+
+  /* ---- Layout ---- */
+  --wrap:  1200px;
+  --pad-x: clamp(20px, 5vw, 56px);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(.4,0,.2,1);
+  --ease-out:      cubic-bezier(.16,1,.3,1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   320ms;
+}
+
+/* =========================================================
+   Semantic type recipes — use these classes OR their vars directly
+   ========================================================= */
+
+.kova-wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.kova-hero, h1.kova, .type-hero {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--fs-hero);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+}
+.kova-hero strong, .type-hero strong {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.kova-display, h2.kova, .type-display {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--fs-display);
+  letter-spacing: var(--ls-display-2);
+  line-height: var(--lh-heading);
+  color: var(--color-ink);
+}
+
+.kova-feature-title, .type-feature-title {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 1.75rem; /* 28px */
+  letter-spacing: var(--ls-display-2);
+  line-height: var(--lh-heading);
+  color: var(--color-ink);
+}
+
+.kova-greeting, .type-h1-sans {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-h1);
+  letter-spacing: -0.3px;
+  line-height: var(--lh-heading);
+  color: var(--color-ink);
+}
+
+.kova-step-title, .type-h3 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+}
+
+.kova-section-title, .type-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  color: var(--color-ink);
+}
+
+.kova-body, .type-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+}
+
+.kova-body-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  color: var(--fg2);
+}
+
+.kova-tag, .type-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.kova-mono-tag {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--fs-mono-tag);
+  letter-spacing: var(--ls-mono-tag);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.kova-mono-id {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-mono-id);
+  letter-spacing: 0.05em;
+  color: var(--color-ink-muted);
+}
+
+.kova-wordmark {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: var(--ls-wordmark);
+  color: var(--color-ink);
+}
+
+/* =========================================================
+   Base reset-ish / body
+   ========================================================= */
+
+.kova-body-reset {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

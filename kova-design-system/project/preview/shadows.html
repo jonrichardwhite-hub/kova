@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 32px 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; align-items: center; justify-items: center; background: var(--color-bg); }
+  .c { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .t { width: 100px; height: 64px; background: var(--color-surface); border-radius: 10px; }
+  .n { font-size: 11px; font-weight: 600; color: var(--color-ink); }
+  .p { font-family: var(--font-mono); font-size: 9px; color: var(--color-ink-muted); text-align: center; }
+</style></head>
+<body>
+  <div class="c"><div class="t" style="box-shadow:0 1px 4px rgba(0,0,0,0.05)"></div><div class="n">shadow-sm</div></div>
+  <div class="c"><div class="t" style="box-shadow:0 4px 16px rgba(0,0,0,0.08)"></div><div class="n">shadow-md</div></div>
+  <div class="c"><div class="t" style="box-shadow:0 8px 30px rgba(0,0,0,0.10)"></div><div class="n">shadow-lg</div></div>
+  <div class="c"><div class="t" style="box-shadow:0 16px 60px rgba(0,0,0,0.12)"></div><div class="n">shadow-xl</div></div>
+  <div class="c"><div class="t" style="box-shadow:0 2px 12px rgba(74,121,184,0.25)"></div><div class="n">shadow-cta</div></div>
+</body></html>

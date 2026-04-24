@@ -1,0 +1,26 @@
+/* Shared preview card base — used by every preview/*.html card */
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  padding: 24px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+.meta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}

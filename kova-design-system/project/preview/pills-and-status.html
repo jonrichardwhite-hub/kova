@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 28px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; background: var(--color-bg); }
+  .pill { padding: 7px 14px; border: 1px solid var(--border-default); background: var(--color-surface); color: rgba(43,51,61,0.7); border-radius: 999px; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; }
+  .pill.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); font-weight: 600; }
+  .pill.ghost { background: transparent; }
+  .status { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 4px 9px; border-radius: 999px; letter-spacing: 0.075em; text-transform: uppercase; }
+  .status.success { background: rgba(58,139,106,0.10); color: #3A8B6A; }
+  .status.danger  { background: rgba(196,88,74,0.08); color: #C4584A; }
+  .status.amber   { background: rgba(196,136,74,0.10); color: #C4884A; }
+  .status.info    { background: rgba(91,142,201,0.10); color: #5B8EC9; }
+  .status.muted   { background: rgba(43,47,54,0.04); color: #6B7280; }
+</style></head>
+<body>
+  <span class="pill active">All clear</span>
+  <span class="pill">Verify</span>
+  <span class="pill ghost">Escalate</span>
+  <span class="status success">All clear</span>
+  <span class="status danger">Flagged</span>
+  <span class="status amber">Consult</span>
+  <span class="status info">Info</span>
+  <span class="status muted">Idle</span>
+</body></html>

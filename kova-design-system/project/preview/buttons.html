@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 28px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: var(--color-bg); }
+  .btn-primary, .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.85rem 1.6rem; border-radius: 999px; cursor: pointer;
+    font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em;
+    transition: all 200ms cubic-bezier(.4,0,.2,1);
+  }
+  .btn-primary { background: var(--color-ink); color: var(--color-bg); border: 1px solid var(--color-ink); }
+  .btn-secondary { background: transparent; color: var(--color-ink); border: 1px solid var(--color-ink); }
+  .btn-kiosk {
+    padding: 14px 24px; border: none; cursor: pointer;
+    background: linear-gradient(135deg, #4A79B8, #3A68A0);
+    color: white; border-radius: 12px;
+    font-family: var(--font-sans); font-size: 14px; font-weight: 600;
+    box-shadow: 0 2px 12px rgba(74,121,184,0.25);
+  }
+  .btn-ghost {
+    padding: 10px 18px; background: transparent;
+    border: 1.5px solid var(--border-default); color: var(--color-ink);
+    border-radius: 999px; font-family: var(--font-sans); font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+</style></head>
+<body>
+  <button class="btn-primary">Begin consult</button>
+  <button class="btn-secondary">Not now</button>
+  <button class="btn-kiosk">Confirm pickup</button>
+  <button class="btn-ghost">Sign in</button>
+</body></html>

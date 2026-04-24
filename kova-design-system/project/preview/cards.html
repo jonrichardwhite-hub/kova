@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; background: var(--color-bg); }
+  .card { background: var(--color-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .drug { font-size: 15px; font-weight: 600; color: var(--color-ink); }
+  .gen { font-size: 11px; color: var(--color-ink-muted); font-style: italic; margin-top: 2px; }
+  .status { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 3px 8px; border-radius: 999px; letter-spacing: 0.075em; text-transform: uppercase; background: rgba(58,139,106,0.10); color: #3A8B6A; }
+  .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 10px; border-top: 1px solid var(--border-subtle); }
+  .lbl { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.075em; color: var(--color-ink-muted); text-transform: uppercase; }
+  .val { font-size: 11px; color: rgba(43,51,61,0.7); margin-top: 2px; }
+  .kn-name { font-size: 14px; font-weight: 600; color: var(--color-ink); margin-top: 2px; }
+  .kn-addr { font-size: 11px; color: rgba(43,51,61,0.7); margin: 4px 0 12px; }
+  .kn-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding-top: 10px; border-top: 1px solid var(--border-subtle); }
+  .big { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+  .sub { font-size: 10px; color: var(--color-ink-muted); }
+</style></head>
+<body>
+  <div class="card">
+    <div class="head">
+      <div><div class="drug">Sertraline 50mg</div><div class="gen">Zoloft (generic)</div></div>
+      <span class="status">All clear</span>
+    </div>
+    <div class="meta">
+      <div><div class="lbl">Days supply</div><div class="val">30 days</div></div>
+      <div><div class="lbl">Refills left</div><div class="val">2 of 5</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="head">
+      <span class="lbl" style="font-weight:600;font-size:10px">K-MELB-014</span>
+      <span class="status">Online</span>
+    </div>
+    <div class="kn-name">Carlton North</div>
+    <div class="kn-addr">Rathdowne St · Carlton VIC</div>
+    <div class="kn-row">
+      <div><div class="big">47</div><div class="sub">today</div></div>
+      <div><div class="big">3</div><div class="sub">queue</div></div>
+      <div><div class="big">99.4%</div><div class="sub">uptime</div></div>
+    </div>
+  </div>
+</body></html>

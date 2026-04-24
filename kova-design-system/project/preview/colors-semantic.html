@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 20px; }
+  .sw { border-radius: 10px; padding: 12px; border: 1px solid var(--border-subtle); background: var(--color-surface); display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 44px; border-radius: 6px; border: 1px solid rgba(43,47,54,0.05); position:relative; overflow: hidden; }
+  .chip::after { content: ""; position: absolute; inset: 0; background: var(--f); }
+  .name { font-size: 11px; font-weight: 600; color: var(--color-ink); }
+  .hex { font-family: var(--font-mono); font-size: 9px; color: var(--color-ink-muted); letter-spacing: 0.04em; }
+</style></head>
+<body>
+  <div class="sw"><div class="chip" style="--f:#3A8B6A"></div><div class="name">Success</div><div class="hex">#3A8B6A</div></div>
+  <div class="sw"><div class="chip" style="--f:#C4584A"></div><div class="name">Danger</div><div class="hex">#C4584A</div></div>
+  <div class="sw"><div class="chip" style="--f:#C4884A"></div><div class="name">Amber</div><div class="hex">#C4884A</div></div>
+  <div class="sw"><div class="chip" style="--f:#5B8EC9"></div><div class="name">Info</div><div class="hex">#5B8EC9</div></div>
+  <div class="sw"><div class="chip" style="--f:rgba(58,139,106,0.10)"></div><div class="name">Success bg</div><div class="hex">green 10%</div></div>
+  <div class="sw"><div class="chip" style="--f:rgba(196,88,74,0.08)"></div><div class="name">Danger bg</div><div class="hex">red 8%</div></div>
+  <div class="sw"><div class="chip" style="--f:rgba(196,136,74,0.10)"></div><div class="name">Amber bg</div><div class="hex">amber 10%</div></div>
+  <div class="sw"><div class="chip" style="--f:rgba(91,142,201,0.10)"></div><div class="name">Info bg</div><div class="hex">blue 10%</div></div>
+</body></html>

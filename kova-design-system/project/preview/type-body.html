@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; display: flex; flex-direction: column; gap: 10px; background: var(--color-bg); }
+  .row { display: grid; grid-template-columns: 110px 1fr; gap: 20px; align-items: baseline; padding: 8px 0; border-bottom: 1px dashed var(--border-subtle); }
+  .row:last-child { border: 0; }
+  .meta { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.075em; color: var(--color-ink-muted); font-weight: 600; text-transform: uppercase; }
+  .spec { font-size: 10px; color: rgba(43,51,61,0.65); }
+</style></head>
+<body>
+  <div class="row"><div><div class="meta">Greeting</div><div class="spec">Montserrat 300 · 32px</div></div>
+    <div style="font-family: var(--font-sans); font-weight: 300; font-size: 28px; letter-spacing: -0.3px; color: var(--color-ink);">Good morning, Jon</div></div>
+  <div class="row"><div><div class="meta">Step title</div><div class="spec">Montserrat 400 · 22px</div></div>
+    <div style="font-family: var(--font-sans); font-weight: 400; font-size: 20px; color: var(--color-ink);">Verify your prescription</div></div>
+  <div class="row"><div><div class="meta">Section</div><div class="spec">Montserrat 600 · 15px</div></div>
+    <div style="font-family: var(--font-sans); font-weight: 600; font-size: 15px; color: var(--color-ink);">Live script queue</div></div>
+  <div class="row"><div><div class="meta">Body</div><div class="spec">Montserrat 400 · 13px</div></div>
+    <div style="font-family: var(--font-sans); font-size: 13px; color: var(--color-ink);">Tap below to begin a private consult.</div></div>
+  <div class="row"><div><div class="meta">CTA</div><div class="spec">Montserrat 600 · 14px</div></div>
+    <div style="font-family: var(--font-sans); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; color: var(--color-ink);">Begin consult</div></div>
+</body></html>
