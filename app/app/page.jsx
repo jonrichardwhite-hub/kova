@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import { MarketingNav } from '@ds/ui_kits/marketing/MarketingNav.jsx';
 import { StatGrid, Pillars, Footer } from '@ds/ui_kits/marketing/Sections.jsx';
 

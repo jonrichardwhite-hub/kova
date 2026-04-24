@@ -1,4 +1,4 @@
-import React from 'react';
+export const metadata = { title: 'Kova · Design system' };
 
 const CARDS = [
   ['brand-lockups', 'Brand lockups'],
@@ -21,7 +21,7 @@ const CARDS = [
   ['voice', 'Voice'],
 ];
 
-export default function DesignSystem() {
+export default function DesignSystemPage() {
   return (
     <section className="ds-index">
       <div className="kova-tag">DESIGN SYSTEM · V0.1</div>
@@ -34,11 +34,7 @@ export default function DesignSystem() {
       <div className="ds-grid">
         {CARDS.map(([slug, label]) => (
           <div className="ds-card" key={slug}>
-            <iframe
-              src={`/project/preview/${slug}.html`}
-              title={label}
-              loading="lazy"
-            />
+            <iframe src={`/ds/preview/${slug}.html`} title={label} loading="lazy" />
             <div className="ds-card-label">
               {label}
               <small>{slug}.html</small>

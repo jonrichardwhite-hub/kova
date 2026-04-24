@@ -1,41 +1,37 @@
-@import '../../../kova-design-system/project/colors_and_type.css';
-@import '../../../kova-design-system/project/ui_kits/marketing/site.css';
-@import '../../../kova-design-system/project/ui_kits/kiosk/kiosk.css';
+@import '../../kova-design-system/project/colors_and_type.css';
+@import '../../kova-design-system/project/ui_kits/marketing/site.css';
 
-:root {
-  color-scheme: light;
-}
-
-/* Reset the global body rules inherited from kiosk.css / site.css — we compose
-   the kiosk backdrop inside its own .kiosk-stage wrapper instead. */
-html, body, #root { height: 100%; }
+/* Reset body-level rules that marketing/kiosk CSS applied globally. Each page
+   composes its own backdrop. */
+html, body { margin: 0; padding: 0; min-height: 100vh; }
 body {
-  margin: 0;
   background: var(--color-bg, #F5F5F0);
   color: var(--color-ink, #2B333D);
   font-family: var(--font-sans, Montserrat, system-ui, sans-serif);
   display: block;
   align-items: initial;
   justify-content: initial;
-  min-height: 0;
-  padding: 0;
 }
+
+* { box-sizing: border-box; }
 
 .app-tabs {
   position: sticky; top: 0; z-index: 50;
   display: flex; gap: 4px; padding: 12px clamp(20px, 5vw, 56px);
-  background: rgba(245,245,240,0.92); backdrop-filter: none;
+  background: rgba(245,245,240,0.92);
   border-bottom: 1px solid rgba(43,47,54,0.06);
 }
 .app-tab {
-  appearance: none; border: 1px solid rgba(43,47,54,0.08);
-  background: #fff; color: var(--ink, #2B333D);
+  display: inline-block;
+  border: 1px solid rgba(43,47,54,0.08);
+  background: #fff; color: var(--color-ink, #2B333D);
   font: 500 13px/1 Montserrat, sans-serif;
   padding: 9px 14px; border-radius: 999px; cursor: pointer;
+  text-decoration: none;
   transition: background 200ms cubic-bezier(.4,0,.2,1), color 200ms cubic-bezier(.4,0,.2,1);
 }
 .app-tab:hover { background: rgba(43,47,54,0.04); }
-.app-tab.active { background: var(--ink, #2B333D); color: var(--snow-white, #F5F5F0); border-color: transparent; }
+.app-tab.active { background: var(--color-ink, #2B333D); color: var(--color-bg, #F5F5F0); border-color: transparent; }
 
 .app-view { min-height: calc(100vh - 57px); }
 
@@ -56,10 +52,9 @@ body {
   background: #fff; border: 1px solid rgba(43,47,54,0.06);
   border-radius: 12px; overflow: hidden;
   display: flex; flex-direction: column;
-  transition: background 200ms cubic-bezier(.4,0,.2,1);
 }
 .ds-card iframe {
-  width: 100%; height: 220px; border: 0; background: var(--snow-white, #F5F5F0);
+  width: 100%; height: 220px; border: 0; background: var(--color-bg, #F5F5F0);
 }
 .ds-card-label {
   padding: 12px 16px;
@@ -73,11 +68,10 @@ body {
   text-transform: uppercase;
 }
 
-.kiosk-stage {
-  display: flex; justify-content: center;
-  padding: 48px 20px;
-  min-height: calc(100vh - 57px);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(74,121,184,0.08), transparent 60%),
-    #E8E4DB;
+.kiosk-host {
+  height: calc(100vh - 57px);
+  width: 100%;
+  border: 0;
+  display: block;
+  background: #E8E4DB;
 }

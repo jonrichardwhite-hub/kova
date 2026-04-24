@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@ds/*": ["../kova-design-system/project/*"]
+    }
+  }
+}
