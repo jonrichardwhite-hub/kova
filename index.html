@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kova · Autonomous pharmacy platform</title>
+  <link rel="stylesheet" href="kova-design-system/project/colors_and_type.css" />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #F5F5F0; color: #2B333D; font-family: var(--font-sans, Montserrat, system-ui, sans-serif); }
+    * { box-sizing: border-box; }
+
+    .app-shell { display: flex; flex-direction: column; height: 100vh; }
+
+    .app-tabs {
+      display: flex; gap: 4px; padding: 12px clamp(20px, 5vw, 56px);
+      background: rgba(245,245,240,0.94);
+      border-bottom: 1px solid rgba(43,47,54,0.06);
+      flex: 0 0 auto;
+    }
+    .app-tab {
+      appearance: none;
+      border: 1px solid rgba(43,47,54,0.08);
+      background: #fff; color: #2B333D;
+      font: 500 13px/1 Montserrat, sans-serif;
+      padding: 9px 14px; border-radius: 999px; cursor: pointer;
+      transition: background 200ms cubic-bezier(.4,0,.2,1), color 200ms cubic-bezier(.4,0,.2,1);
+    }
+    .app-tab:hover { background: rgba(43,47,54,0.04); }
+    .app-tab.active { background: #2B333D; color: #F5F5F0; border-color: transparent; }
+    .mock-note {
+      margin-left: auto;
+      font: 400 11px/1 'JetBrains Mono', monospace;
+      letter-spacing: 0.08em;
+      color: rgba(43,51,61,0.5);
+      text-transform: uppercase;
+      align-self: center;
+    }
+
+    .app-view { flex: 1; min-height: 0; position: relative; background: #F5F5F0; }
+    .pane { position: absolute; inset: 0; display: none; }
+    .pane.active { display: block; }
+    .pane > iframe { width: 100%; height: 100%; border: 0; display: block; background: #F5F5F0; }
+
+    /* Design-system grid (scrollable pane) */
+    .pane.ds { overflow: auto; padding: 48px clamp(20px, 5vw, 56px); }
+    .ds-inner { max-width: 1200px; margin: 0 auto; }
+    .ds-inner h2 { font-family: 'Playfair Display', serif; font-weight: 200; font-size: 48px; letter-spacing: -0.025em; margin: 12px 0 8px; }
+    .ds-inner > p { margin: 0 0 32px; color: rgba(43,51,61,0.7); max-width: 640px; }
+    .ds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .ds-card { background: #fff; border: 1px solid rgba(43,47,54,0.06); border-radius: 12px; overflow: hidden; }
+    .ds-card iframe { width: 100%; height: 220px; border: 0; background: #F5F5F0; }
+    .ds-card-label { padding: 12px 16px; font: 500 13px/1.3 Montserrat, sans-serif; border-top: 1px solid rgba(43,47,54,0.06); }
+    .ds-card-label small { display: block; margin-top: 4px; font: 400 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.08em; color: rgba(43,51,61,0.5); text-transform: uppercase; }
+
+    .kova-tag {
+      display: inline-block;
+      font: 500 11px/1 'JetBrains Mono', monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(43,51,61,0.55);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="app-tabs" role="tablist">
+      <button class="app-tab active" data-tab="marketing" role="tab">Marketing site</button>
+      <button class="app-tab" data-tab="kiosk" role="tab">Kiosk</button>
+      <button class="app-tab" data-tab="system" role="tab">Design system</button>
+      <span class="mock-note">STATIC MOCK · NO NODE REQUIRED</span>
+    </nav>
+
+    <section class="app-view">
+      <div class="pane active" data-pane="marketing">
+        <iframe src="kova-design-system/project/ui_kits/marketing/index.html" title="Marketing site" loading="lazy"></iframe>
+      </div>
+
+      <div class="pane" data-pane="kiosk">
+        <iframe src="kova-design-system/project/ui_kits/kiosk/demo.html" title="Kiosk prototype" loading="lazy"></iframe>
+      </div>
+
+      <div class="pane ds" data-pane="system">
+        <div class="ds-inner">
+          <span class="kova-tag">DESIGN SYSTEM · V0.1</span>
+          <h2>Kova foundations.</h2>
+          <p>
+            Live preview cards sourced from the design handoff bundle — colors, type,
+            components, and voice. Each frame is the authoritative HTML/CSS from
+            <code>kova-design-system/project/preview/</code>.
+          </p>
+          <div class="ds-grid" id="ds-grid"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const CARDS = [
+      ['brand-lockups', 'Brand lockups'],
+      ['colors-brand', 'Colors · Brand'],
+      ['colors-core', 'Colors · Core'],
+      ['colors-semantic', 'Colors · Semantic'],
+      ['colors-domain', 'Colors · Domain'],
+      ['type-display', 'Type · Display'],
+      ['type-body', 'Type · Body'],
+      ['type-wordmark-and-tags', 'Type · Wordmark & tags'],
+      ['buttons', 'Buttons'],
+      ['cards', 'Cards'],
+      ['chat', 'Chat'],
+      ['icons', 'Icons'],
+      ['info-panels', 'Info panels'],
+      ['pills-and-status', 'Pills & status'],
+      ['radii', 'Radii'],
+      ['shadows', 'Shadows'],
+      ['spacing', 'Spacing'],
+      ['voice', 'Voice'],
+    ];
+
+    const grid = document.getElementById('ds-grid');
+    grid.innerHTML = CARDS.map(([slug, label]) => `
+      <div class="ds-card">
+        <iframe src="kova-design-system/project/preview/${slug}.html" title="${label}" loading="lazy"></iframe>
+        <div class="ds-card-label">${label}<small>${slug}.html</small></div>
+      </div>
+    `).join('');
+
+    const tabs = document.querySelectorAll('.app-tab');
+    const panes = document.querySelectorAll('.pane');
+    function activate(key) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
+      panes.forEach(p => p.classList.toggle('active', p.dataset.pane === key));
+      if (history.replaceState) history.replaceState(null, '', '#' + key);
+    }
+    tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+
+    const initial = (location.hash || '#marketing').slice(1);
+    if (['marketing', 'kiosk', 'system'].includes(initial)) activate(initial);
+  </script>
+</body>
+</html>
